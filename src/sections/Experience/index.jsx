@@ -2,6 +2,8 @@ import { faGithub, faMedium, faYoutube } from "@fortawesome/free-brands-svg-icon
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import FormattedDate from "../../components/FormattedDate";
+
 
 const Experience = () => {
     const [isMouseEnter, setIsMouseEnter] = useState({});
@@ -15,9 +17,7 @@ const Experience = () => {
                 onMouseLeave={()=> setIsMouseEnter({'exp1':false})}
             >
                 <div>
-                    <div>
-                        <span className={`text-sm ${isMouseEnter['exp1'] ? "text-primaryAccent" : ""}`}>2022-2023</span>
-                    </div>
+                    <FormattedDate isHighLight={isMouseEnter['exp1']}>2022-2023</FormattedDate>
                     <div>
                         <img 
                         className="w-5/6 rounded-md"
@@ -25,7 +25,7 @@ const Experience = () => {
                     </div>
                 </div>
                 <div className="grid gap-y-4">
-                    <div className={`text-primaryAccent ${isMouseEnter ? "text-primaryTitle" : ""}`}>
+                    <div className={`text-primaryAccent ${isMouseEnter['exp1'] ? "text-primaryTitle" : ""}`}>
                         Fashion Ecomerce
                         <FontAwesomeIcon className={`text-xs -rotate-45 transition-all duration-1000 ease-out ${isMouseEnter['exp1'] ? "translate-x-1 -translate-y-1" : ""}`} icon={faArrowRight}/>
                     </div>
@@ -60,7 +60,7 @@ const Experience = () => {
                     </div>
                 </div>
                 <div className="grid gap-y-4">
-                    <div className={`text-primaryAccent ${isMouseEnter ? "text-primaryTitle" : ""}`}>
+                    <div className={`text-primaryAccent ${isMouseEnter['exp2'] ? "text-primaryTitle" : ""}`}>
                         Fashion Ecomerce
                         <FontAwesomeIcon className={`text-xs -rotate-45 transition-all duration-1000 ease-out ${isMouseEnter['exp2'] ? "translate-x-1 -translate-y-1" : ""}`} icon={faArrowRight}/>
                     </div>
